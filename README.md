@@ -97,27 +97,34 @@ apply from: "config.gradle"
 ```
 ##### 2.1.2、MainModuleFragment
 public class MainModuleFragment extends BaseModelFragment<MainModuleFragmentBinding,MainModuleViewModel> {
+
     public static MainModuleFragment newInstance() {
         return new MainModuleFragment();
     }
+
     private BaseAdapter baseAdapter;
+
     @Override
     public int initVariableId() {
         return 0;
     }
+
     @Override
     protected SwipeRefreshLayout getSwipeRefreshLayout() {
         return binding.swipeRefreshLayout;
     }
+
     @Override
     public int getLayoutId() {
         return R.layout.main_module_fragment;
     }
+
     @Override
     public void initEventAndData(Bundle savedInstanceState) {
         baseAdapter = new BaseAdapter(viewModel.liveData.getValue());
         binding.recyclerView.setAdapter(baseAdapter);
         baseAdapter.getLoadMoreModule().setOnLoadMoreListener(this);
+
         viewModel.liveData.observe(this, recommendInfoBeans -> {
             if (isRefresh){
                 baseAdapter.setList(recommendInfoBeans);
@@ -132,12 +139,14 @@ public class MainModuleFragment extends BaseModelFragment<MainModuleFragmentBind
             }
         });
     }
+
     @Override
     public void onRefresh() {
         // 这里的作用是防止下拉刷新的时候还可以上拉加载
         baseAdapter.getLoadMoreModule().setEnableLoadMore(false);
         super.onRefresh();
     }
+
     @Override
     public void onLoadMore() {
         // 打开或关闭加载更多功能（默认为true）
@@ -160,17 +169,18 @@ public class MainModuleFragment extends BaseModelFragment<MainModuleFragmentBind
 
         super.onLoadMore();
     }
+
     @Override
     public void requestData() {
         viewModel.requestNetWork();
     }
+
     @Override
     public MainModuleViewModel initViewModel() {
         AppViewModelFactory factory = AppViewModelFactory.getInstance(getActivity().getApplication());
         return  ViewModelProviders.of(this, factory).get(MainModuleViewModel.class);
     }
 }
-
 ## 3、快速上手　MVP使用，可以下载项目查看
 
 ### 3.1、第一个Fragment
