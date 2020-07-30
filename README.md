@@ -86,7 +86,7 @@ apply from: "config.gradle"
 ## 2、快速上手　MVVM使用，可以下载项目查看
 
 ### 2.1、第一个Fragment
-> 以大家都熟悉的登录操作为例：三个文件**MainModuleFragment.java**、**MainModuleViewModel.java**、**main_module_fragment.xml**
+> 以操作为例：三个文件**MainModuleFragment.java**、**MainModuleViewModel.java**、**main_module_fragment.xml**
 
 ##### 2.1.1、关联ViewModel
 ```xml
