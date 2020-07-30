@@ -3,4 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="white">#ffffff</color>
+    <color name="recommend_color_def">#fe8f6a</color>
+    <color name="bottom_tab_text_color_pre">#fe8f6a</color>
+    <color name="bottom_tab_text_color_nor">#656565</color>
+    <color name="tab_selector_def">#f4f4f1</color>
+    <color name="red">#FF0000</color>
 </resources>

@@ -7,29 +7,113 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/button3"
+    <LinearLayout
+        android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="MVVM"
+        android:background="@drawable/shape_main_tab_bg"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp_4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="MVP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fl_content" />
+        <com.cnr.cnrmodule.widget.MainTabButton
+            android:id="@+id/tab1zhuanqu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:tabIcon="@mipmap/index_zhuanqu"
+            app:tabSelectedIcon="@mipmap/index_zhuanqu_focus"
+            app:tabTxt="推荐" />
+
+        <com.cnr.cnrmodule.widget.MainTabButton
+            android:id="@+id/tab2zhibo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:tabIcon="@mipmap/index_zhibo"
+            app:tabSelectedIcon="@mipmap/index_zhibo_focus"
+            app:tabTxt="直播" />
+
+        <com.cnr.cnrmodule.widget.MainTabButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:visibility="invisible"
+            />
+
+
+        <com.cnr.cnrmodule.widget.MainTabButton
+            android:id="@+id/tab4yingshi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:tabIcon="@mipmap/index_play"
+            app:tabSelectedIcon="@mipmap/index_play_focus"
+            app:tabTxt="发现"/>
+
+        <com.cnr.cnrmodule.widget.MainTabButton
+            android:id="@+id/tab5mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:tabIcon="@mipmap/index_user"
+            app:tabSelectedIcon="@mipmap/index_user_focus"
+            app:tabTxt="我的" />
+
+    </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/fl_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/playbar_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <ImageView
+            android:id="@+id/tab3yaokong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/index_device"
+            android:layout_gravity="center"
+
+            />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_full"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragment_container">
+
+
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

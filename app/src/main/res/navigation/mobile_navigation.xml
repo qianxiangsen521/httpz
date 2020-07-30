@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_mvvm"
+    >
+
+
+
+    <fragment
+        android:id="@+id/navigation_mvvm"
+        android:name="com.cnr.cnrmodule.fragment.mvvm.MainModuleFragment"
+        android:label="@string/title_mvvm"
+        tools:layout="@layout/main_module_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_mvp"
+        android:name="com.cnr.cnrmodule.fragment.mvp.MainFragment"
+        android:label="@string/title_mvp"
+        tools:layout="@layout/main_module_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.cnr.cnrmodule.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.cnr.cnrmodule.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.cnr.cnrmodule.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>

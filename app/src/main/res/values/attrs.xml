@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MainTabButton">
+        <attr name="tabIcon" format="reference" />
+        <attr name="tabSelectedIcon" format="reference" />
+        <attr name="tabTxt" format="string" />
+    </declare-styleable>
+
+</resources>

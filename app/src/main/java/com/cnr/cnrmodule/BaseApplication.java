@@ -31,7 +31,6 @@ public class BaseApplication extends Application {
         mInstance = this;
         width = StringTool.getScreenWidth();
         height = StringTool.getScreenHeight();
-        // 初始化 EventBus
         Utils.init(this);
         //是否开启打印日志
         KLog.init(BuildConfig.DEBUG);
