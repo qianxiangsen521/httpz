@@ -6,23 +6,23 @@
 	## 框架特点
     - **快速开发**
 
-        此项目是基于MVVMHabit做了些改造,在MVVMHabit中使用BindingCollectionAdapter替换为BaseRecyclerViewAdapterHelper,adapter 配置更加灵活。
+    	　此项目是基于MVVMHabit做了些改造,在MVVMHabit中使用BindingCollectionAdapter替换为BaseRecyclerViewAdapterHelper,adapter 配置更加灵活。
 
-        项目中也集成了MVP模块，MVP模块是基于androidmvp项目简化封装，可任意选择。
+    	　项目中也集成了MVP模块，MVP模块是基于androidmvp项目简化封装，可任意选择。
 
-    	httpz 只需要写项目的业务逻辑，不用再去关心网络请求。
+    	　httpz 只需要写项目的业务逻辑，不用再去关心网络请求。
 
     - **维护方便**
 
-    	MVVM开发模式，低耦合，逻辑分明。Model层负责将请求的数据交给ViewModel；ViewModel层负责将请求到的数据做业务逻辑处理，使用LiveData将数据交给View层去展示，与View一一对应；View层只负责界面绘制刷新，不处理业务逻辑，非常适合分配独立模块开发。
+    	　MVVM开发模式，低耦合，逻辑分明。Model层负责将请求的数据交给ViewModel；ViewModel层负责将请求到的数据做业务逻辑处理，使用LiveData将数据交给View层去展示，与View一一对应；View层只负责界面绘制刷新，不处理业务逻辑，非常适合分配独立模块开发。
 
-        MVP开发模式，低耦合，逻辑分明。Presenter负责调用Model，Model负责网络请求在将传递给Presenter，Presenter将数据处理完，最后交给View层去展示
+    	　MVP开发模式，低耦合，逻辑分明。Presenter负责调用Model，Model负责网络请求在将传递给Presenter，Presenter将数据处理完，最后交给View层去展示
 
     - **基类封装**
 
-    	专门针对MVVM模式打造的　BaseModelFragment、BaseViewModel，在View层中不再需要定义ViewDataBinding和ViewModel，直接在BaseActivity、BaseFragment上限定泛型即可使用。普通界面只需要编写Fragment，然后使用ContainerActivity盛装(代理)，这样就不需要每个界面都在AndroidManifest中注册一遍。
+    	　专门针对MVVM模式打造的　BaseModelFragment、BaseViewModel，在View层中不再需要定义ViewDataBinding和ViewModel，直接在BaseActivity、BaseFragment上限定泛型即可使用。普通界面只需要编写Fragment，然后使用ContainerActivity盛装(代理)，这样就不需要每个界面都在AndroidManifest中注册一遍。
 
-        专门针对MVP模式打造的BaseActivity、 BaseFragment 、BasePresenter自定义，直接在BaseActivity、BaseFragment上限定泛型即可使用
+    	　专门针对MVP模式打造的BaseActivity、 BaseFragment 、BasePresenter自定义，直接在BaseActivity、BaseFragment上限定泛型即可使用
 
     - **全局操作**
     	1. 全局的Activity堆栈式管理，在程序任何地方可以打开、结束指定的Activity，一键退出应用程序。
